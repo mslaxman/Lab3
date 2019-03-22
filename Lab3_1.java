@@ -1,61 +1,30 @@
-package lab2;
+package com;
+
+import java.util.Scanner;
 
 public class Lab3_1 {
-	public int secondSmallest(int arr[] ) 
-     { 
-       int i, first, second; 
-       int size=arr.length;
-
-       if (size < 2) 
-         { 
-           System.out.print(" Invalid Input "); 
-          // break; 
-         } 
-       first = Integer.MAX_VALUE; 
-       second = Integer.MAX_VALUE;
-       for (i = 0; i < size ; i++) 
-        { 
-           if (arr[i] < first) 
-            { 
-             second = first; 
-             first = arr[i]; 
-            } 
-          else if (arr[i] < second && arr[i] != first) 
-          second = arr[i];
-        } 
-       return second;	
-   }
-      
-       public int secondLargest(int arr[] ) 
-       { 
-         int i, first, second; 
-         int size=arr.length;
-
-         if (size < 2) 
-           { 
-             System.out.print(" Invalid Input "); 
-            // break; 
-           } 
-         first = Integer.MIN_VALUE; 
-         second = Integer.MIN_VALUE;
-         for (i = 0; i < size ; i++) 
-          { 
-             if (arr[i] > first) 
-              { 
-               second = first; 
-               first = arr[i]; 
-              } 
-            else if (arr[i] > second && arr[i] != first) 
-            second = arr[i];
-          } 
-return second;	
-}
+	public int secondSmallest(int[] a ) 
+   	{ 
+       
+		int i,j,temp;
+		for(i=0;i<a.length;i++)
+		{
+			for(j=0;j<a.length-1;j++)
+			{
+				if(a[j]>a[j+1])
+				{
+					temp=a[j];
+					a[j]=a[j+1];
+					a[j+1]=temp;
+				}
+			}
+		}
+		return a[1];
+   	}
 	public static void main(String st[]) {
-		int a[]= {10,10,20,45,67,89,90,90};
-		Lab3_1 l31=new Lab3_1();
-		System.out.println("Second Smallest : "+l31.secondSmallest(a));
-		System.out.println("Second Largest : "+l31.secondLargest(a));
-
+		Scanner s=new Scanner(System.in);
+		int a[]= {1,2,3,4,5};
+		Lab3_1 e=new Lab3_1();
+		System.out.print(e.secondSmallest(a));
 	}
-  
 }
