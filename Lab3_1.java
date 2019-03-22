@@ -26,5 +26,6 @@ public class Lab3_1 {
 		int a[]= {1,2,3,4,5};
 		Lab3_1 e=new Lab3_1();
 		System.out.print(e.secondSmallest(a));
+		s.close();
 	}
 }
