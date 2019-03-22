@@ -11,13 +11,20 @@ public class Lab3_2 {
 		}
 		Arrays.sort(s);
 		int b=s.length;
-		for(int i=0;i<b/2;i++) {
-			s[i]=s[i].toUpperCase();
-		}		
+		if(b%2!=0) {
+			for(int i=0;i<(b/2+1);i++) {
+				s[i]=s[i].toUpperCase();
+			}		
+		}
+		else {
+			for(int i=0;i<b/2;i++) {
+				s[i]=s[i].toUpperCase();
+			}	
+		}
 		return s;
 	}
 	public static void main(String[] as) {
-		String[] fruits = new String[] {"Pineapple","Apple", "Orange", "Banana"}; 
+		String[] fruits = new String[] {"Pineapple","Papple", "Apple", "Orange", "Banana"}; 
 		Lab3_2 e=new Lab3_2();
 		fruits=e.sortS(fruits);
 		for(String s1:fruits) {
@@ -25,3 +32,4 @@ public class Lab3_2 {
 		}
 	}
 }
+
