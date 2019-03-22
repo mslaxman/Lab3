@@ -17,9 +17,9 @@ public class Lab3_3 {
 		return a1;
 	}
 	public static void main(String st[]) {
-		Lab3_3 l33=new Lab3_3();
+		Lab3_3 e=new Lab3_3();
 		int a[]= {12,43,56,43};
-		int []p=l33.getSorted(a);
+		int []p=e.getSorted(a);
 		for(int i=0;i<p.length;i++) {
 			for(int j=i+1;j<p.length;j++) {
 				if(p[i]>p[j]) {
@@ -31,12 +31,7 @@ public class Lab3_3 {
 			}
 			 System.out.println(p[i]);
 		}
-		//for(int i=0;i<a.length;i++)
 		
-		
-		/*List l=l33.getSorted(a);
-		Collections.sort(l);
-		System.out.println(l);*/
 	}
 
 }
