@@ -1,31 +1,27 @@
-package lab2;
+package com;
 
-import java.awt.List;
-import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Lab3_2 {
 	
-	public static String[] getSorted(String[] s) {
-		int size=s.length;
-		String []s1=new String[size];
-	
-		for(int i=0;i<size;i++) {
-			if(i<(size+1)/2) {
-				s1[i]=s[i].toUpperCase();		
-				}
-			else {
-				s1[i]=s[i].toLowerCase();
-			}
+	public String[] sortS(String[] s) {
+
+		for(String s1:s) {
+			s1=s1.toLowerCase();
 		}
-		return s1;	
-	 }
-
-	public static void main(String args[]) {
-		String []s= {"vishal","vikas","lokesh","Ravi","Saksham","Vishak","Hello","Hi"};
-		String []sp=getSorted(s);
-		for(int i=0;i<sp.length;i++) {
-			System.out.println(sp[i]);
-			}
+		Arrays.sort(s);
+		int b=s.length;
+		for(int i=0;i<b/2;i++) {
+			s[i]=s[i].toUpperCase();
+		}		
+		return s;
 	}
-
+	public static void main(String[] as) {
+		String[] fruits = new String[] {"Pineapple","Apple", "Orange", "Banana"}; 
+		Lab3_2 e=new Lab3_2();
+		fruits=e.sortS(fruits);
+		for(String s1:fruits) {
+			System.out.println(s1);
+		}
+	}
 }
